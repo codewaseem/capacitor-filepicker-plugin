@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+	package
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:3:5-72
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:3-4:12
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml:2:13-71
+uses-sdk
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		ADDED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml
+		INJECTED from /home/waseem/projects/capacitor-filepicker-plugin/android/capacitor-filepicker-plugin/src/main/AndroidManifest.xml

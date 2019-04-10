@@ -1,0 +1,4 @@
+<resources>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="chooser_title">Choose a file</string>
+</resources>
