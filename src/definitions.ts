@@ -5,5 +5,15 @@ declare global {
 }
 
 export interface FilePickerPluginPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  pick(): Promise<{
+    uri: string,
+    file_path: string,
+    file_data: {
+      bits: Blob,
+      size: number,
+      type: string,
+      name: string,
+      lastModified:number
+    }
+  }>;
 }
