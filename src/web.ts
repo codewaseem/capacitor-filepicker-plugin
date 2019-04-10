@@ -9,9 +9,14 @@ export class FilePickerPluginWeb extends WebPlugin implements FilePickerPluginPl
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async pick(): Promise<{
+    uri: string,
+    size: number,
+    type: string,
+    name: string,
+    lastModified:number
+  }>{
+    return;
   }
 }
 

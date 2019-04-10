@@ -6,14 +6,10 @@ declare global {
 
 export interface FilePickerPluginPlugin {
   pick(): Promise<{
-    uri: string,
-    file_path: string,
-    file_data: {
-      bits: Blob,
+      uri: string,
       size: number,
       type: string,
       name: string,
       lastModified:number
-    }
-  }>;
+    }>;
 }

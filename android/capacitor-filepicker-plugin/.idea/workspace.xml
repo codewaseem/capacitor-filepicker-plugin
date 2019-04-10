@@ -6,9 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd912e7-3bdb-4f38-8008-893a45488a7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../src/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/definitions.ts" afterDir="false" />
-    </list>
+    <list default="true" id="bdd912e7-3bdb-4f38-8008-893a45488a7e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codewaseem/filepickerplugin/FilePickerPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="60">
               <caret line="118" column="75" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -271,7 +269,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codewaseem/filepickerplugin/FilePickerPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="60">
           <caret line="118" column="75" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />

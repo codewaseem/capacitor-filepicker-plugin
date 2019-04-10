@@ -1,6 +1,6 @@
 {
   "name": "capacitor-filepicker-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A capacitor file picker plugin",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -27,7 +27,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "ionic",
+    "cordova"
   ],
   "capacitor": {
     "ios": {

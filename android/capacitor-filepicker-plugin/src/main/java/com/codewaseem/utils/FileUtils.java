@@ -343,26 +343,6 @@ public class FileUtils {
         return null;
     }
 
-
-    public static byte[] toBlob(File file) throws IOException {
-        byte[] fileContent = new byte[(int) file.length()];
-        FileInputStream inputStream = null;
-        try {
-            // create an input stream pointing to the file
-            inputStream = new FileInputStream(file);
-            // read the contents of file into byte array
-            inputStream.read(fileContent);
-        } catch (IOException e) {
-            throw new IOException("Unable to convert file to byte array. " + e.getMessage());
-        } finally {
-            // close input stream
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
-        return fileContent;
-    }
-
     /**
      * Get the file size in a human-readable string.
      *

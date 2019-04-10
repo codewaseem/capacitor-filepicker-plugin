@@ -2,6 +2,7 @@ package com.codewaseem.filepickerplugin;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -19,6 +20,8 @@ import java.io.File;
 import static android.app.Activity.RESULT_OK;
 
 @NativePlugin(
+        requestCodes = { FilePickerPlugin.REQUEST_CODE},
+        name = "FilePicker",
         permissions={
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -51,12 +54,18 @@ public class FilePickerPlugin extends Plugin {
 
     private void startPickFileIntent(PluginCall call) {
         Log.i(TAG, "Starting pick intent");
+        saveCall(call);
+        Log.i(TAG, "saveCall called");
+
         Intent target = FileUtils.createGetContentIntent();
         // Create the chooser Intent
         Intent intent = Intent.createChooser(
                 target, "Select a file.");
         try {
+            Log.i(TAG, "startActivityForResult calling");
             startActivityForResult(call, intent, REQUEST_CODE);
+            Log.i(TAG, "startActivityForResult called");
+
         } catch (ActivityNotFoundException e) {
             Log.e(TAG, "[FilePickerPlugin] error");
             call.error(("ActivityNotFoundException thrown."));
@@ -91,6 +100,7 @@ public class FilePickerPlugin extends Plugin {
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
         super.handleOnActivityResult(requestCode, resultCode, data);
 
+        Log.i(TAG, "received handleOnActivityREsult");
         PluginCall savedCall = getSavedCall();
 
         if (savedCall == null) {
@@ -104,23 +114,16 @@ public class FilePickerPlugin extends Plugin {
                    Log.i(TAG, "Uri = " + uri.toString());
 
                    try {
-                       File file = FileUtils.getFile(getContext(), uri);
-                       final String file_path = FileUtils.getPath(getContext(), uri);
-                       byte[] blob = FileUtils.toBlob(file);
+                       Context context = getActivity().getApplicationContext();
+                       File file = FileUtils.getFile(context, uri);
 
-                       JSObject result =  new JSObject();
-
-
-                       JSObject jsFileObject = new JSObject();
-                       jsFileObject.put("bits", blob);
-                       jsFileObject.put("size", file.length());
-                       jsFileObject.put("type",FileUtils.getMimeType(file));
-                       jsFileObject.put("name",file.getName());
-                       jsFileObject.put("lastModified", file.lastModified());
+                       JSObject result = new JSObject();
 
                        result.put("uri", uri.toString());
-                       result.put("file_path", file_path);
-                       result.put("file_data",jsFileObject);
+                       result.put("size", file.length());
+                       result.put("type",FileUtils.getMimeType(file));
+                       result.put("name",file.getName());
+                       result.put("lastModified", file.lastModified());
 
                        savedCall.resolve(result);
 
