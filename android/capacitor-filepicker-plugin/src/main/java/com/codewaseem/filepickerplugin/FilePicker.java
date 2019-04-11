@@ -20,7 +20,7 @@ import java.io.File;
 import static android.app.Activity.RESULT_OK;
 
 @NativePlugin(
-        requestCodes = { FilePickerPlugin.REQUEST_CODE},
+        requestCodes = { FilePicker.REQUEST_CODE},
         name = "FilePicker",
         permissions={
                 Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -28,9 +28,9 @@ import static android.app.Activity.RESULT_OK;
 //                Manifest.permission.CAMERA
         }
 )
-public class FilePickerPlugin extends Plugin {
+public class FilePicker extends Plugin {
 
-    private static final String TAG = FilePickerPlugin.class.getSimpleName();
+    private static final String TAG = FilePicker.class.getSimpleName();
     static final int REQUEST_CODE = 3786;
 
 
@@ -38,7 +38,6 @@ public class FilePickerPlugin extends Plugin {
     public void pick(PluginCall call) {
 
         if(this.hasRequiredPermissions()){
-            Log.i(TAG, "Has required permissions. Good to go!");
             startPickFileIntent(call);
         } else {
             this.pluginRequestPermissions(
@@ -53,19 +52,14 @@ public class FilePickerPlugin extends Plugin {
     }
 
     private void startPickFileIntent(PluginCall call) {
-        Log.i(TAG, "Starting pick intent");
         saveCall(call);
-        Log.i(TAG, "saveCall called");
 
         Intent target = FileUtils.createGetContentIntent();
         // Create the chooser Intent
         Intent intent = Intent.createChooser(
                 target, "Select a file.");
         try {
-            Log.i(TAG, "startActivityForResult calling");
             startActivityForResult(call, intent, REQUEST_CODE);
-            Log.i(TAG, "startActivityForResult called");
-
         } catch (ActivityNotFoundException e) {
             Log.e(TAG, "[FilePickerPlugin] error");
             call.error(("ActivityNotFoundException thrown."));
@@ -76,7 +70,6 @@ public class FilePickerPlugin extends Plugin {
     protected void handleRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.handleRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        Log.i(TAG,"handling request perms result");
         PluginCall savedCall = getSavedCall();
         if (savedCall == null) {
             Log.i(TAG,"No stored plugin call for permissions request result");
@@ -100,7 +93,6 @@ public class FilePickerPlugin extends Plugin {
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
         super.handleOnActivityResult(requestCode, resultCode, data);
 
-        Log.i(TAG, "received handleOnActivityREsult");
         PluginCall savedCall = getSavedCall();
 
         if (savedCall == null) {
@@ -112,26 +104,9 @@ public class FilePickerPlugin extends Plugin {
                if(data != null) {
                    final Uri uri = data.getData();
                    Log.i(TAG, "Uri = " + uri.toString());
-
-                   try {
-                       Context context = getActivity().getApplicationContext();
-                       File file = FileUtils.getFile(context, uri);
-
-                       JSObject result = new JSObject();
-
-                       result.put("uri", uri.toString());
-                       result.put("size", file.length());
-                       result.put("type",FileUtils.getMimeType(file));
-                       result.put("name",file.getName());
-                       result.put("lastModified", file.lastModified());
-
-                       savedCall.resolve(result);
-
-
-                   } catch (Exception e) {
-                       Log.i(TAG, e.getMessage());
-                        savedCall.reject("Something went wrong while processing file");
-                   }
+                   JSObject result = new JSObject();
+                   result.put("uri", uri.toString());
+                  savedCall.resolve(result);
                }
 
            }

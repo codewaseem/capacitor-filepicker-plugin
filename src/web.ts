@@ -1,7 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
-import { FilePickerPluginPlugin } from './definitions';
+import { FilePickerPluginInterface } from './definitions';
 
-export class FilePickerPluginWeb extends WebPlugin implements FilePickerPluginPlugin {
+export class FilePickerPluginWeb extends WebPlugin implements FilePickerPluginInterface {
   constructor() {
     super({
       name: 'FilePickerPlugin',
@@ -10,11 +10,7 @@ export class FilePickerPluginWeb extends WebPlugin implements FilePickerPluginPl
   }
 
   async pick(): Promise<{
-    uri: string,
-    size: number,
-    type: string,
-    name: string,
-    lastModified:number
+    uri: string
   }>{
     return;
   }

@@ -2,18 +2,6 @@
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codewaseem.filepickerplugin.capacitorfilepickerplugin">
 
-    <!--<provider-->
-    <!--android:name="com.codewaseem.localstorageprovider.LocalStorageProvider"-->
-    <!--android:authorities="com.codewaseem.localstorageprovider.documents"-->
-    <!--android:enabled="true"-->
-    <!--android:exported="true"-->
-    <!--android:grantUriPermissions="true"-->
-    <!--android:permission="android.permission.MANAGE_DOCUMENTS" >-->
-    <!--<intent-filter>-->
-    <!--<action android:name="android.content.action.DOCUMENTS_PROVIDER" />-->
-    <!--</intent-filter>-->
-    <!--</provider>-->
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

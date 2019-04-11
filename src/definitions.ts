@@ -1,15 +1,11 @@
 declare global {
   interface PluginRegistry {
-    FilePickerPlugin?: FilePickerPluginPlugin;
+    FilePickerPlugin?: FilePickerPluginInterface;
   }
 }
 
-export interface FilePickerPluginPlugin {
+export interface FilePickerPluginInterface {
   pick(): Promise<{
-      uri: string,
-      size: number,
-      type: string,
-      name: string,
-      lastModified:number
+      uri: string
     }>;
 }
