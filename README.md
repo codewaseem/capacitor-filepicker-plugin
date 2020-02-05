@@ -10,6 +10,19 @@ yarn add capacitor-filepicker-plugin
 
 ## Usage
 
+To pick a file from the storage, do the following,
+
+```
+let fileInfo = await Capacitor.Plugins.FilePicker.pick();
+```
+
+The `fileInfo` will have a `uri` property which points to the location of the file in your android phone.
+The URI is in `file:android.net.Uri` format. You may need to convert it into normal File URI format using
+this `(window.Ionic.WebView.convertFileSrc(fileInfo.uri)`. See the example below for more details.
+
+
+## Example
+
 ```
 
 handleNativeFileSelect = async () => {
@@ -31,6 +44,7 @@ handleNativeFileSelect = async () => {
             // If you are using angular, you may have to register the plugin first in your App `Init` Component.
             console.log("Filepicker plugin not installed");
         }
+}
 ```
 
 
